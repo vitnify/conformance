@@ -1,0 +1,48 @@
+{
+  "certificate": {
+    "capabilities": [],
+    "event_root": "1ffdd39a8f538c2584edd64656bc58421b018e42d81d0f28a28c11b1b203093a",
+    "head_hash": "1ffdd39a8f538c2584edd64656bc58421b018e42d81d0f28a28c11b1b203093a",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [
+      ""
+    ],
+    "n_events": 1,
+    "nonce": "fde61278f41842ab49fb1a4eb8626c24",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "8c444c36126499abaa3996777e07aa3f",
+    "sig": "ee3c3012355dd6d95869dcded32fc15feaa06795811f03912e76c5a70724cfdff62c51cca34bcadb4ee19374cd2caf716245cbebef0f15ca0498ff595eddbd06",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "accept: hosted integrity-only",
+  "expect": {
+    "flags": {
+      "model_digests_match": true
+    },
+    "ok": true
+  },
+  "id": "A04",
+  "log": [
+    {
+      "i": 0,
+      "kind": "llm_call",
+      "payload": {
+        "model_digest": "",
+        "prompt_hash": "ph",
+        "provider": {
+          "model_version": "gpt-x",
+          "provider": "openai"
+        },
+        "seed": 0,
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}

@@ -1,0 +1,139 @@
+[
+  {
+    "id": "R01",
+    "description": "reject: unsigned receipt",
+    "file": "R01-unsigned-receipt.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R02",
+    "description": "reject: keyless HMAC",
+    "file": "R02-keyless-hmac.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R03",
+    "description": "reject: ungranted tool in caps",
+    "file": "R03-ungranted-tool-in-caps.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R04",
+    "description": "reject: edited event",
+    "file": "R04-edited-event.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R05",
+    "description": "reject: deleted event",
+    "file": "R05-deleted-event.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R06",
+    "description": "reject: reordered events",
+    "file": "R06-reordered-events.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R07",
+    "description": "reject: edited model digest",
+    "file": "R07-edited-model-digest.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R08",
+    "description": "reject: tampered chain pointer",
+    "file": "R08-tampered-chain-pointer.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R09",
+    "description": "reject: backdated v1 timestamp",
+    "file": "R09-backdated-v1-timestamp.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R10",
+    "description": "reject: decision-string evasion",
+    "file": "R10-decision-string-evasion.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R11",
+    "description": "reject: relabelled event kind",
+    "file": "R11-relabelled-event-kind.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "R12",
+    "description": "reject: unpinned attacker re-sign",
+    "file": "R12-unpinned-attacker-re-sign.json",
+    "expect": {
+      "ok": false
+    }
+  },
+  {
+    "id": "A01",
+    "description": "accept: honest enforced receipt",
+    "file": "A01-honest-enforced-receipt.json",
+    "expect": {
+      "ok": true,
+      "flags": {
+        "containment_enforced": true
+      }
+    }
+  },
+  {
+    "id": "A02",
+    "description": "accept: valid v1 receipt (back-compat)",
+    "file": "A02-valid-v1-receipt-back-compat.json",
+    "expect": {
+      "ok": true
+    }
+  },
+  {
+    "id": "A03",
+    "description": "accept: observe-only (flagged)",
+    "file": "A03-observe-only-flagged.json",
+    "expect": {
+      "ok": true,
+      "flags": {
+        "containment_enforced": false
+      }
+    }
+  },
+  {
+    "id": "A04",
+    "description": "accept: hosted integrity-only",
+    "file": "A04-hosted-integrity-only.json",
+    "expect": {
+      "ok": true,
+      "flags": {
+        "model_digests_match": true
+      }
+    }
+  }
+]

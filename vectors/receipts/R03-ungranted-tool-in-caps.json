@@ -1,0 +1,38 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "4ea80939023e05a37c384fefa2933d09e1971a762789ef46cc430ebfedaa353e",
+    "head_hash": "4ea80939023e05a37c384fefa2933d09e1971a762789ef46cc430ebfedaa353e",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "c0a00e651cac7bd283ae3e9fed393fd8",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "2c1d08d80d4c6a7b0e91f8206ac4bf2a",
+    "sig": "d0e984fa712011081391f2b5cce227e65dccca9871947a21aed7f71a83d6ed288838df5e51e8a5ea3565f8fe91ff7f8dc17074551812a9deebab92727ab38c0a",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: ungranted tool in caps",
+  "expect": {
+    "ok": false
+  },
+  "id": "R03",
+  "log": [
+    {
+      "i": 0,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "x",
+        "result_hash": "h",
+        "tool": "wire_transfer"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}

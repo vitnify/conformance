@@ -1,0 +1,37 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "14b94fbcda429c22721c15d9b868500d31d96ac80e0d2aebee0c3aedb26dde78",
+    "head_hash": "14b94fbcda429c22721c15d9b868500d31d96ac80e0d2aebee0c3aedb26dde78",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "52485bec86407714d533f03274a932c8",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "1bcea8913aaef0ca622ba413aa6ba66b",
+    "sig": "bf1e78538cfd62aa1f56039fe353de84a95b4e980bed5ead8c35c3eae7fddb980151fc32655fdf06f5ef7b925346acf92dc3ce0adfe1f15c3e1725bf41dc2e0f",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: decision-string evasion",
+  "expect": {
+    "ok": false
+  },
+  "id": "R10",
+  "log": [
+    {
+      "i": 0,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "PERMIT",
+        "result": "x",
+        "tool": "wire_transfer"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}

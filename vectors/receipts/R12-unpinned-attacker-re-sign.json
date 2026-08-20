@@ -1,0 +1,42 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "c11e7fbf74f27969440c1028352d73b41147bbea9af27ab741f645f532d5cdf2",
+    "head_hash": "c11e7fbf74f27969440c1028352d73b41147bbea9af27ab741f645f532d5cdf2",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "803ed489c72d0c65dc956a7903108411",
+    "program_hash": "p",
+    "pubkey": "2291fac66f25bac2fe92adf20f8e3b651fc55414909b4bc553956fded9396e30",
+    "run_id": "1b52601028e93bbada3f630db6c7b3af",
+    "sig": "517c5e7c5cdef58597a05466e0571b72efc5e22148e5ceb2f6259f13e6c641d11f7cb821e602f4a0b445702f6bd36632702417c9618bf68bc1f075248e3bea07",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: unpinned attacker re-sign",
+  "expect": {
+    "ok": false
+  },
+  "id": "R12",
+  "log": [
+    {
+      "i": 0,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "x",
+        "result_hash": "h",
+        "tool": "read_docs"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {
+    "pinned_pubkeys": [
+      "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2"
+    ]
+  }
+}

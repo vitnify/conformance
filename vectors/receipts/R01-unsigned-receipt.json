@@ -1,0 +1,37 @@
+{
+  "certificate": {
+    "capabilities": [
+      "wire_transfer"
+    ],
+    "event_root": "b4f041301804692f6e594358016919dc4a5e19da2a7a4991ea4daeef48f0531a",
+    "head_hash": "b4f041301804692f6e594358016919dc4a5e19da2a7a4991ea4daeef48f0531a",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "b53bcc4603700aed1b2179f2de5b6e98",
+    "program_hash": "p",
+    "pubkey": null,
+    "run_id": "11e31c54f206ffbdcaa6a84d8e545fd0",
+    "sig": null,
+    "sig_alg": "none",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: unsigned receipt",
+  "expect": {
+    "ok": false
+  },
+  "id": "R01",
+  "log": [
+    {
+      "i": 0,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "SENT",
+        "tool": "wire_transfer"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}

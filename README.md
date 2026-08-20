@@ -35,8 +35,15 @@ unproven, not failed.
 
 ## Two tiers, mirroring the receipt
 
-### Receipt conformance — [`conformance/receipt.py`](conformance/receipt.py)
-Fully runnable, pure Python. Two sets of cases a conformant *verifier* must handle:
+### Receipt conformance — [`vectors/receipts/`](vectors/receipts/) + [`conformance/receipt.py`](conformance/receipt.py)
+Static, **language-agnostic JSON vectors** — frozen receipt wire bytes plus the verdict
+a conformant verifier must return. The runner feeds each vector to an *adapter*; the
+default ([`conformance/adapters/vitnify_py.py`](conformance/adapters/vitnify_py.py))
+wraps the Python `vitnify` verifier, and the vectors are just bytes, so a verifier in
+any language can be tested against the same corpus (see
+[`vectors/receipts/README.md`](vectors/receipts/README.md)).
+
+Two sets of cases a conformant *verifier* must handle:
 
 - **Reject (R01–R12)** — the forgery classes. Unsigned or keyless-HMAC receipts, an
   ungranted tool, an edited / deleted / reordered event, an edited model digest, a
@@ -67,18 +74,29 @@ TinyLlama-1.1B-Chat Q4_K_M, prompt `"Once upon a time,"`, 20 new tokens. Without
 binary and model set, the vector is reported `SKIPPED`; it still defines the target
 every engine is measured against.
 
+## Testing a verifier in another language
+
+The receipt vectors are plain JSON, so nothing ties conformance to Python. Point your
+verifier at [`vectors/receipts/`](vectors/receipts/): for each entry in `index.json`,
+reconstruct a receipt and event log from the `certificate`/`log` bytes (BLAKE3;
+rebuild the signed body from the receipt's own `v`), verify, and assert the verdict
+equals `expect.ok` with every `expect.flags` entry matching. Either write a runner in
+your language or add a Python adapter in [`conformance/adapters/`](conformance/adapters/)
+and run `python -m conformance --adapter <name>`. Full schema:
+[`vectors/receipts/README.md`](vectors/receipts/README.md).
+
 ## Adding to the corpus
 
 - **A new forgery class** — add a builder and a `("Rnn", …)` row to `CASES` in
-  [`conformance/receipt.py`](conformance/receipt.py). A receipt that survives it today
-  is a finding; a receipt that survives it after is a regression.
+  [`tools/gen_receipt_vectors.py`](tools/gen_receipt_vectors.py), then
+  `python tools/gen_receipt_vectors.py` to freeze it into `vectors/receipts/` and commit.
+  A receipt that survives it today is a finding; a receipt that survives it after is a
+  regression.
 - **A new determinism vector** — add an entry to [`vectors/engine.json`](vectors/engine.json)
   with the model, prompt tokens, `n_new`, and the reproduced `model_digest`.
 
-Reference receipts are currently constructed via the reference implementation's helpers,
-which tests the Python verifier. Freezing them as static JSON receipt vectors — so a
-verifier in any language can be tested against the same bytes — is the next step, and
-the reason the runner is structured around data, not a fixed API.
+Regenerating rotates the keys/nonces/timestamps baked into the vectors (the bytes
+change, the verdicts do not) — so regenerate deliberately, then commit the result.
 
 ## Specification
 

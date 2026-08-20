@@ -1,0 +1,55 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
+    "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [
+      "dd"
+    ],
+    "n_events": 2,
+    "nonce": "0cdb54b84132d263d262e38e5fcb6a56",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "504c3df59813f8e48d59ea11f6c7408d",
+    "sig": "07d6817a5f7333f6d85321cd9e5b29cbf33ea8346b69fd0ae95078c72e3f7a08fa9a22cf2a73cc099ac49cb2eb92e9c661fea7d86dbd940d84b8700342d19207",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: tampered chain pointer",
+  "expect": {
+    "ok": false
+  },
+  "id": "R08",
+  "log": [
+    {
+      "i": 0,
+      "kind": "llm_call",
+      "payload": {
+        "model_digest": "dd",
+        "prompt_hash": "ph",
+        "seed": 0,
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      "prev": "genesis"
+    },
+    {
+      "i": 1,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "r",
+        "result_hash": "h",
+        "tool": "read_docs"
+      },
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "verify_kwargs": {}
+}

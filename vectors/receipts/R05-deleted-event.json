@@ -1,0 +1,44 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
+    "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [
+      "dd"
+    ],
+    "n_events": 2,
+    "nonce": "eba9febc8408f88acb8c6c8ab83cde14",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "fe49135aff890f643ccbe4f9167c33a1",
+    "sig": "ba7ec104615ec9df63bfff5f6752f2474f8e7969a7fb052237e419f853543b96626aae57d515c8125309baaed48458e02445f1df6e3820a39fed56a7ba3a7208",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: deleted event",
+  "expect": {
+    "ok": false
+  },
+  "id": "R05",
+  "log": [
+    {
+      "i": 0,
+      "kind": "llm_call",
+      "payload": {
+        "model_digest": "dd",
+        "prompt_hash": "ph",
+        "seed": 0,
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}

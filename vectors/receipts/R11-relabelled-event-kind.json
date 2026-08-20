@@ -1,0 +1,37 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "dd001178842b5ddac522c5e08dda1507c6c6fc081a03bd87ab134f655c689157",
+    "head_hash": "dd001178842b5ddac522c5e08dda1507c6c6fc081a03bd87ab134f655c689157",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "ee03004aca5e99db770a352479592b9a",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "21bb32657218eef144fe1753ee05d70e",
+    "sig": "3d0f1736720c3af5a714cf0249b980c83095785f930a5db4193a76945e15702b4a1c315ccb039214be999810a72abca903f1b6147ed735ad2e46219aa7befb01",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "reject: relabelled event kind",
+  "expect": {
+    "ok": false
+  },
+  "id": "R11",
+  "log": [
+    {
+      "i": 0,
+      "kind": "TOOL_CALL",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "x",
+        "tool": "wire_transfer"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}
