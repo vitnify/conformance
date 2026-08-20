@@ -24,19 +24,28 @@ def load():
 
 
 def _reproduce(bin_path: str, model_dir: str, vec: dict) -> str:
-    """Invoke the engine to recompute a vector's digest. Adjust flags to your binary."""
+    """Invoke the `vitni-receipt` engine binary to recompute a vector's digest.
+
+    The binary prints JSON: {"model_digest", "regime", "model_digest_v1", ...}. We
+    return the tier-1 v2 `model_digest` and, when the vector pins a `regime`, require
+    the engine to report the same one (a digest match under the wrong regime would be a
+    coincidence worth catching).
+    """
     model = Path(model_dir) / f"{vec['model_id']}.gguf"
     if not model.exists():
         raise FileNotFoundError(str(model))
     out = subprocess.run(
-        [bin_path, "--model", str(model),
-         "--prompt-tokens", ",".join(map(str, vec["prompt_tokens"])),
-         "--n-new", str(vec["n_new"]), "--print-digest"],
+        [bin_path, "--gguf", str(model),
+         "--prompt", ",".join(map(str, vec["prompt_tokens"])),
+         "--n", str(vec["n_new"]), "--model-id", vec["model_id"]],
         capture_output=True, text=True, timeout=600,
     )
     if out.returncode != 0:
         raise RuntimeError(out.stderr.strip() or f"exit {out.returncode}")
-    return out.stdout.strip().split()[-1]
+    result = json.loads(out.stdout.strip().splitlines()[-1])
+    if "regime" in vec and result.get("regime") != vec["regime"]:
+        raise RuntimeError(f"regime mismatch: engine {result.get('regime')!r} != vector {vec['regime']!r}")
+    return result["model_digest"]
 
 
 def run():

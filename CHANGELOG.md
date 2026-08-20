@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0 — 2026-08-20
+
+- **Engine vector updated to tier-1 v2.** The reference `model_digest` is now the v2
+  anchor `ffebe862…9c88f` (binds regime `vitni-regime-1`); the frozen v1 digest
+  `9c0754…f3b0f` is retained on the vector for pre-regime receipts. `domain_separator`
+  is `vitnify-receipt v2`.
+- **Fixed the engine reproducer** to match the real `vitni-receipt` binary: it invokes
+  `--gguf/--prompt/--n/--model-id`, parses the JSON output, returns `model_digest`, and
+  additionally requires the engine's reported `regime` to match the vector. Verified
+  end-to-end against the binary — the v2 anchor reproduces (`1 reproduced`).
+
 ## 0.2.0 — 2026-08-20
 
 Made receipt conformance implementation-independent.
