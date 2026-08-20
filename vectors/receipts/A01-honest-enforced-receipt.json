@@ -1,0 +1,58 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
+    "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [
+      "dd"
+    ],
+    "n_events": 2,
+    "nonce": "8f45bdf0870669ded54d37e958de8845",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "5d287650357538b8997748e3f9dcb9a9",
+    "sig": "4a76dcf1a6dec719ab47acacbb034cad7be0f6f452df4bc2fb6d13c03588dd45d46152ef9f38e77488d128d2d258560c3911c6c11591afd268ff79b792b7ad0b",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "accept: honest enforced receipt",
+  "expect": {
+    "flags": {
+      "containment_enforced": true
+    },
+    "ok": true
+  },
+  "id": "A01",
+  "log": [
+    {
+      "i": 0,
+      "kind": "llm_call",
+      "payload": {
+        "model_digest": "dd",
+        "prompt_hash": "ph",
+        "seed": 0,
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      "prev": "genesis"
+    },
+    {
+      "i": 1,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "ALLOW",
+        "result": "r",
+        "result_hash": "h",
+        "tool": "read_docs"
+      },
+      "prev": "6cf0ffba54fe0afe4f55cc7a89fc3ad6334708867233a7302048ca6acbb9167a"
+    }
+  ],
+  "verify_kwargs": {}
+}

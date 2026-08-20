@@ -5,6 +5,7 @@ Exit 0 iff every receipt case has the expected verdict AND no engine vector is w
 (engine vectors may be SKIPPED when the engine binary/model are absent — see engine.py).
 """
 from __future__ import annotations
+import argparse
 import sys
 
 from conformance import receipt, engine
@@ -29,11 +30,16 @@ def _impl_banner():
 
 
 def main() -> int:
-    print(f"{DIM}vitnify conformance kit — {_impl_banner()}{OFF}\n")
+    ap = argparse.ArgumentParser(prog="python -m conformance", description=__doc__)
+    ap.add_argument("--adapter", default="vitnify-py",
+                    help="verifier adapter for the receipt tier (default: vitnify-py)")
+    opts = ap.parse_args()
+
+    print(f"{DIM}vitnify conformance kit — {_impl_banner()}  ·  adapter: {opts.adapter}{OFF}\n")
 
     # -- receipt-verifier conformance (must-reject + must-accept) --
     print("RECEIPT CONFORMANCE  (forgeries rejected, valid receipts accepted)")
-    r_results, r_ok = receipt.run()
+    r_results, r_ok = receipt.run(opts.adapter)
     for cid, desc, exp_ok, got, passed in r_results:
         mark = f"{GREEN}PASS{OFF}" if passed else f"{RED}FAIL{OFF}"
         verdict = "reject" if exp_ok is False else "accept"

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0 — 2026-08-20
+
+Made receipt conformance implementation-independent.
+
+- **Static receipt vectors** — the 16 receipt cases are now frozen as language-agnostic
+  JSON in `vectors/receipts/` (wire bytes + expected verdict), with a schema doc. A
+  verifier in any language can be tested against the same bytes; conformance no longer
+  runs receipts through the Python API in process.
+- **Adapters** — the runner feeds each vector to a pluggable adapter
+  (`conformance/adapters/`, default `vitnify-py`); `python -m conformance --adapter <name>`
+  selects one. Bring-your-own-verifier is the extension point.
+- **Generator** — `tools/gen_receipt_vectors.py` builds the vectors from the reference
+  implementation; the committed JSON, not the generator, is the corpus.
+
 ## 0.1.0 — 2026-08-20
 
 Initial conformance kit.

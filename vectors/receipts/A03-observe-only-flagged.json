@@ -1,0 +1,40 @@
+{
+  "certificate": {
+    "capabilities": [
+      "read_docs"
+    ],
+    "event_root": "311cbff1650ac49a208cb8a186b09d5f1dab838625d8437d3532e4ee92bf16f8",
+    "head_hash": "311cbff1650ac49a208cb8a186b09d5f1dab838625d8437d3532e4ee92bf16f8",
+    "issued_at": "2026-08-20T06:15:58Z",
+    "model_digests": [],
+    "n_events": 1,
+    "nonce": "ca8c50c41579656f55f75d4f612eaf3c",
+    "program_hash": "p",
+    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "run_id": "454ee887e3e9da5a64d3a2f80ed51469",
+    "sig": "d6eb876f0cb1ac112bf5ab6daefe5ec412d9c7572629ede24ea1a010f493302cae021e022407693bf9bbcb90b582c035d7e79f55ea154bc17389f7a5bdaa2700",
+    "sig_alg": "ed25519",
+    "v": "vitnify-receipt v2"
+  },
+  "description": "accept: observe-only (flagged)",
+  "expect": {
+    "flags": {
+      "containment_enforced": false
+    },
+    "ok": true
+  },
+  "id": "A03",
+  "log": [
+    {
+      "i": 0,
+      "kind": "tool_call",
+      "payload": {
+        "decision": "OBSERVED",
+        "result": "x",
+        "tool": "read_docs"
+      },
+      "prev": "genesis"
+    }
+  ],
+  "verify_kwargs": {}
+}
