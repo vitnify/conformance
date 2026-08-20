@@ -1,0 +1,15 @@
+{
+  "about": "Reference model-computation digests. A conformant engine must reproduce each `model_digest` bit-for-bit on any CPU vendor or instruction set. The digest binds the run under the domain separator below (see the vitnify-receipt spec).",
+  "domain_separator": "vitnify-receipt v1",
+  "vectors": [
+    {
+      "id": "tinyllama-1.1b-chat-q4km-once-upon-a-time-20",
+      "model": "TinyLlama-1.1B-Chat, Q4_K_M GGUF",
+      "model_id": "tinyllama-1.1b-chat-Q4_K_M",
+      "prompt_tokens": [1, 9038, 2501, 263, 931, 29892],
+      "prompt_text": "Once upon a time,",
+      "n_new": 20,
+      "model_digest": "9c0754458633e863e0fb5bb2bd00df0d8b813934687b9a4097a1a9a4179f3b0f"
+    }
+  ]
+}

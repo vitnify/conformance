@@ -1,0 +1,42 @@
+name: conformance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 1"   # weekly: catch a published release drifting out of conformance
+
+concurrency:
+  group: conformance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conformance:
+    name: conformance (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      # Test the PUBLISHED implementation against the corpus, so CI fails the day a
+      # release drifts out of conformance. To test a working copy instead, point this
+      # at a local checkout: pip install -e /path/to/vitnify
+      - name: Install the implementation under test
+        run: |
+          python -m pip install --upgrade pip
+          pip install vitnify
+
+      # Receipt tier runs fully. Engine tier is SKIPPED here (no engine binary/model
+      # in CI); it does not fail the run — see conformance/engine.py.
+      - name: Run conformance kit
+        run: python -m conformance
