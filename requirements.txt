@@ -1,0 +1,2 @@
+# The implementation under test. Swap for `-e /path/to/vitnify` to test a working copy.
+vitnify
