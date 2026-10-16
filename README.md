@@ -1,5 +1,8 @@
 # vitnify/conformance
 
+[![CI](https://github.com/vitnify/conformance/actions/workflows/ci.yml/badge.svg)](https://github.com/vitnify/conformance/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 **The executable definition of a conformant vitnify receipt.** Point it at an
 implementation; it tells you whether that implementation reproduces the reference
 vectors and rejects the forgeries.
@@ -11,8 +14,9 @@ both the way this kit specifies — so a receipt one tool issues means the same 
 to a tool built by someone else. This repo is that specification, in runnable form.
 
 ```
-pip install vitnify
-python -m conformance
+git clone https://github.com/vitnify/conformance && cd conformance
+pip install vitnify      # the reference implementation under test (from PyPI)
+python -m conformance    # runs from this repo; there is no 'conformance' PyPI package
 ```
 
 ```
