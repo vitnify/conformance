@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1 — 2026-10-16
+
+- **Engine vector re-pinned to `vitni-regime-2`.** The reference `model_digest` for the
+  TinyLlama seed vector is now `7a2e28c9…41730` under regime `vitni-regime-2`; the frozen
+  v1 digest `9c0754…f3b0f` is unchanged. The engine had moved from `vitni-regime-1` to
+  `vitni-regime-2` (this run's v2 anchor went `ffebe862…` → `7a2e28c9…`) without the
+  vector following, so the reproducer's regime check was rejecting the live engine and
+  the vector silently reported `SKIPPED` instead of `1 reproduced`. Re-verified
+  end-to-end against the `vitni-receipt` binary: `1 reproduced`.
+
 ## 0.3.0 — 2026-08-20
 
 - **Engine vector updated to tier-1 v2.** The reference `model_digest` is now the v2

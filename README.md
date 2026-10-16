@@ -69,12 +69,13 @@ python -m conformance
 ```
 
 The seed vector is the tier-1 **v2** anchor
-`ffebe8620f3a78009317c2d72fcc373b4b3cd5c63ba424f6776a2007e119c88f` —
+`7a2e28c94c351b8e303e0f8c12a719b8aaa2c94e7233a96b4348a7dc6d341730` —
 TinyLlama-1.1B-Chat Q4_K_M, prompt `"Once upon a time,"`, 20 new tokens, regime
-`vitni-regime-1`. The v2 digest binds the numerical regime; the vector also carries the
-frozen tier-1 **v1** digest `9c0754…f3b0f` for the same run (pre-regime receipts). Without
-the binary and model set, the vector is reported `SKIPPED`; it still defines the target
-every engine is measured against.
+`vitni-regime-2`. The v2 digest binds the numerical regime; the vector also carries the
+frozen tier-1 **v1** digest `9c0754…f3b0f` for the same run (pre-regime receipts),
+unchanged across the regime-1 → regime-2 move. Under the earlier `vitni-regime-1` this
+run's v2 anchor was `ffebe862…9c88f`. Without the binary and model set, the vector is
+reported `SKIPPED`; it still defines the target every engine is measured against.
 
 ## Testing a verifier in another language
 
