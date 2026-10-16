@@ -112,24 +112,29 @@ def _resign_pinned():
 
 
 # ---- positive: the verifier MUST accept (expect ok=True + flags) ----------------
+# Accept cases pin the honest fixture key PUB (the same key R12 pins to REJECT an
+# attacker re-sign). The verifier is fail-closed on authority -- a valid signature from
+# an unknown key is not provenance -- so an honest receipt is `ok=true` only when verified
+# against a trusted pin. A public-key pin is neither a secret nor a network call, so this
+# is still offline verification. Pinning here does NOT weaken the verifier's default.
 
 def _honest():
     log = _honest_log()
-    return issue_certificate("p", ["read_docs"], log, priv=PRIV)[0], log, {}
+    return issue_certificate("p", ["read_docs"], log, priv=PRIV)[0], log, {"pinned_pubkeys": [PUB]}
 
 def _v1_receipt():
     log = _honest_log()
-    return _v1_signed(log, ["read_docs"]), log, {}
+    return _v1_signed(log, ["read_docs"]), log, {"pinned_pubkeys": [PUB]}
 
 def _observe_only():
     log = EventLog(); log.append(Kind.TOOL_CALL, {"tool": "read_docs", "decision": "OBSERVED", "result": "x"})
-    return issue_certificate("p", ["read_docs"], log, priv=PRIV)[0], log, {}
+    return issue_certificate("p", ["read_docs"], log, priv=PRIV)[0], log, {"pinned_pubkeys": [PUB]}
 
 def _hosted_integrity_only():
     log = EventLog()
     log.append_llm_call("ph", [1, 2], seed=0, model_digest="",
                         provider={"provider": "openai", "model_version": "gpt-x"})
-    return issue_certificate("p", [], log, priv=PRIV)[0], log, {}
+    return issue_certificate("p", [], log, priv=PRIV)[0], log, {"pinned_pubkeys": [PUB]}
 
 
 # id, description, expected {ok, flags?}, builder

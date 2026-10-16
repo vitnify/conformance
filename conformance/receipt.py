@@ -36,7 +36,9 @@ def run(adapter_name: str = "vitnify-py"):
             got = checks.get("ok")
             passed = (got is expect["ok"])
             for k, v in expect.get("flags", {}).items():
-                passed = passed and (checks.get(k) is v)
+                # require the field to EXIST -- `checks.get(k) is v` would treat an absent
+                # field as an expected null, letting a missing check silently pass.
+                passed = passed and (k in checks and checks[k] is v)
         except Exception as e:
             got, passed = f"raised {type(e).__name__}", False
         results.append((vector["id"], vector["description"], expect["ok"], got, passed))

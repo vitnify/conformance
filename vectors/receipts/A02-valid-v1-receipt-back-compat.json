@@ -12,9 +12,9 @@
     "n_events": 2,
     "nonce": null,
     "program_hash": "p",
-    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
+    "pubkey": "6f88a92594d191d717f98ee85c1b67a7731b120485f1863c587b8537b3b1b7cd",
     "run_id": null,
-    "sig": "452787738a0f6ec64a495d147388c1dd4259f870099044a0a388ec4e1d6c1522bec002ed955444403807efade6c6cb94d17212a73a3d721d9a57e9573d4c9904",
+    "sig": "aecd4770802f27f80075b2c35d470f8e58ca4ea4c777b3257e02b94ec73a0ce8654d48708652fd3517b5e6bbb1fbced78fa451ffd6e090816a88055bef3dca06",
     "sig_alg": "ed25519",
     "v": "vitnify-receipt v1"
   },
@@ -51,5 +51,9 @@
       "prev": "6cf0ffba54fe0afe4f55cc7a89fc3ad6334708867233a7302048ca6acbb9167a"
     }
   ],
-  "verify_kwargs": {}
+  "verify_kwargs": {
+    "pinned_pubkeys": [
+      "6f88a92594d191d717f98ee85c1b67a7731b120485f1863c587b8537b3b1b7cd"
+    ]
+  }
 }

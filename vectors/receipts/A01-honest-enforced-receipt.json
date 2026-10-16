@@ -5,16 +5,16 @@
     ],
     "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
     "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
-    "issued_at": "2026-08-20T06:15:58Z",
+    "issued_at": "2026-10-16T14:33:21Z",
     "model_digests": [
       "dd"
     ],
     "n_events": 2,
-    "nonce": "8f45bdf0870669ded54d37e958de8845",
+    "nonce": "8b1c83045a8cf8d5554fae1f17264ae0",
     "program_hash": "p",
-    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
-    "run_id": "5d287650357538b8997748e3f9dcb9a9",
-    "sig": "4a76dcf1a6dec719ab47acacbb034cad7be0f6f452df4bc2fb6d13c03588dd45d46152ef9f38e77488d128d2d258560c3911c6c11591afd268ff79b792b7ad0b",
+    "pubkey": "6f88a92594d191d717f98ee85c1b67a7731b120485f1863c587b8537b3b1b7cd",
+    "run_id": "0fbab68d9c1aee446205183e61f55f3b",
+    "sig": "9f20cfa4016b190fcdea3c455805c8de1060008bc3580188f81eb0f5923e6bd96ba6c50b01b3fc01755869b21bdbfbfef1074cbfc270f791cb7e9ca08b191f06",
     "sig_alg": "ed25519",
     "v": "vitnify-receipt v2"
   },
@@ -54,5 +54,9 @@
       "prev": "6cf0ffba54fe0afe4f55cc7a89fc3ad6334708867233a7302048ca6acbb9167a"
     }
   ],
-  "verify_kwargs": {}
+  "verify_kwargs": {
+    "pinned_pubkeys": [
+      "6f88a92594d191d717f98ee85c1b67a7731b120485f1863c587b8537b3b1b7cd"
+    ]
+  }
 }
