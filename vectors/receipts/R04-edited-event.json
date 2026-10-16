@@ -5,16 +5,16 @@
     ],
     "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
     "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
-    "issued_at": "2026-08-20T06:15:58Z",
+    "issued_at": "2026-10-16T14:33:21Z",
     "model_digests": [
       "dd"
     ],
     "n_events": 2,
-    "nonce": "cba35bdda1d4046766c8c1c130288d11",
+    "nonce": "22df250fd00914d631f7c9f3604e379c",
     "program_hash": "p",
-    "pubkey": "e678c134d47c1260b9bfd9efe06c87acac3844b93fbaa838fd7a43cb021e96e2",
-    "run_id": "26dc1945c3e3ee1a05659f402be10177",
-    "sig": "3e2994cecde65448ed426a76ef9bd93cd614b3b816d48068d3e56fc47fbc46d7575f670551f1c6e3bfad8d2d9c21a89d7f50d9ac7e3611f8b7cdcc5d17a12a0b",
+    "pubkey": "6f88a92594d191d717f98ee85c1b67a7731b120485f1863c587b8537b3b1b7cd",
+    "run_id": "1bc4acf0e8844d9b566e4aa218b4c9e1",
+    "sig": "e4de32786b47af2c8dca99f493e3ae386b39b3791c3fff76a5cc2f1885a625909d8f309011acc55cbddaf27b334ecc8579d8dac91998b1a7a98a0117f9cb8701",
     "sig_alg": "ed25519",
     "v": "vitnify-receipt v2"
   },

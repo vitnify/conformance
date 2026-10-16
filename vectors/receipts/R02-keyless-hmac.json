@@ -5,16 +5,16 @@
     ],
     "event_root": "a9c6b50782996a20c515afded9c0f943dca268fb5065b25bcc14551f24c639b9",
     "head_hash": "5aef6ca755e5680e5dccd32ea61de6350ad197654651d8a276734de98ca993b2",
-    "issued_at": "2026-08-20T06:15:58Z",
+    "issued_at": "2026-10-16T14:33:21Z",
     "model_digests": [
       "dd"
     ],
     "n_events": 2,
-    "nonce": "6b53e6347356ab2a291934810a86d133",
+    "nonce": "5741e05170af12887bbe941b8d39e798",
     "program_hash": "p",
     "pubkey": null,
-    "run_id": "1a01c917163d8848848803248b0b20a9",
-    "sig": "83c53896ed43e866abc3cf1cc68b477d026a507dba87a90c8192f0ffead4b30c98e4954fd993580b79f861bd90276c1f2c853e4713a48d8743bfb986d732bcea",
+    "run_id": "fe78baeda00d98e9443c27f830a8ca21",
+    "sig": "33a1739ea328caa7296a63197f4554a497f9306157dc5cccd36005b8c1acf3e557047f26ff71931a7d2336c8f558b0aca2e5f8fad9c650b55fca9d5825f5b8c5",
     "sig_alg": "hmac-blake2b",
     "v": "vitnify-receipt v2"
   },
